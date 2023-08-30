@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Singup from './Singup';
+import Usuarios from './Usuarios';
+import Login from './Login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/signup' element={<Singup />} />
+        <Route path='/usuarios' element={<ProtectedRoute > <Usuarios/> </ProtectedRoute>} />
+        <Route path='/login' element={<Login />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
+}
+
+const ProtectedRoute = ({ redirectPath = "/login", children}) => {
+  const token = localStorage.getItem("token_test");
+
+  if (!token) {
+    return <Navigate to={redirectPath} />;
+  }
+  return children
+  
 }
 
 export default App;

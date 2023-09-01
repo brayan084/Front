@@ -21,17 +21,20 @@ function Singup(){
     
     return(
         <div>
-            <h1>Singup</h1>
+            <h1>Signup</h1>
             <form onSubmit={handleSing}>
                 <input type="text" placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)} />
                 <input type="text" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
                 <input type="text" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
                 <input type="number" placeholder="Role" value={Roleid} onChange={e => setRoleid(e.target.value)} />
 
-                <button type="submit">Singup</button>
+                <button type="submit">Signup</button>
             </form>
 
-            a
+            <a href="/login">Login</a>
+            <br />
+            <a href="/usuarios">Usuarios</a>
+
         </div>
     )
 

@@ -24,6 +24,7 @@ function Usuarios() {
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Email</th>
+                        <th>Role</th>
                     </tr>
                 </thead>
 
@@ -33,10 +34,17 @@ function Usuarios() {
                             <td>{usuario.id}</td>
                             <td>{usuario.nombre}</td>
                             <td>{usuario.email}</td>
+                            <td>{usuario.Roleid}</td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+
+            <div>
+                <a href="/login">Login</a>
+                <br />
+                <a href="/signup">Singup</a>
+            </div>
         </div>
     )
 }

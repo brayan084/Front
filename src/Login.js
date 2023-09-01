@@ -37,6 +37,10 @@ function Login() {
                 <button type="submit">Login</button>
 
             </form>
+
+            <a href="/signup">Singup</a>
+            <br />
+            <a href="/usuarios">Usuarios</a>
         </div>
         
     )
